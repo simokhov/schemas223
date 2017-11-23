@@ -1,0 +1,12 @@
+*.class
+*.xsd
+.idea
+.git
+# Package Files #
+*.jar
+*.war
+*.ear
+*.iml
+
+generate.sh
+target
