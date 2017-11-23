@@ -8,6 +8,7 @@
 
 package ru.gov.zakupki._223fz.purchase._1;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -20,14 +21,14 @@ import ru.gov.zakupki._223fz.types._1.VolumePurchaseStatusType;
 
 
 /**
- * Перечень товаров, работ, услуг
+ * Перечень товаров, работ, услуг  о закупке инновационной продукции, высокотехнологичной продукции 
  * 
- * <p>Java class for volumePurchaseData complex type.
+ * <p>Java class for volumeInnovPurchaseData complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="volumePurchaseData">
+ * &lt;complexType name="volumeInnovPurchaseData">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -39,7 +40,6 @@ import ru.gov.zakupki._223fz.types._1.VolumePurchaseStatusType;
  *             &lt;/restriction>
  *           &lt;/simpleType>
  *         &lt;/element>
- *         &lt;element name="purchaseIndicatorVersion" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="urlVSRZ" minOccurs="0">
  *           &lt;simpleType>
  *             &lt;restriction base="{http://zakupki.gov.ru/223fz/types/1}nonEmptyString">
@@ -63,6 +63,11 @@ import ru.gov.zakupki._223fz.types._1.VolumePurchaseStatusType;
  *         &lt;element name="year" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="purchaseIndicatorListType" type="{http://zakupki.gov.ru/223fz/purchase/1}purchaseIndicatorListType"/>
  *         &lt;element name="attachments" type="{http://zakupki.gov.ru/223fz/types/1}documentListType" minOccurs="0"/>
+ *         &lt;element name="notBuyInnovIn2015" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="sgozRepPer" type="{http://zakupki.gov.ru/223fz/purchase/1}purchaseVolume" minOccurs="0"/>
+ *         &lt;element name="sgozNotBuyP71352RepPer" type="{http://zakupki.gov.ru/223fz/purchase/1}purchaseVolume" minOccurs="0"/>
+ *         &lt;element name="sgozLastYear" type="{http://zakupki.gov.ru/223fz/purchase/1}purchaseVolume" minOccurs="0"/>
+ *         &lt;element name="sgozNotBuyP71352LastPer" type="{http://zakupki.gov.ru/223fz/purchase/1}purchaseVolume" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -72,10 +77,9 @@ import ru.gov.zakupki._223fz.types._1.VolumePurchaseStatusType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "volumePurchaseData", propOrder = {
+@XmlType(name = "volumeInnovPurchaseData", propOrder = {
     "guid",
     "urlOOS",
-    "purchaseIndicatorVersion",
     "urlVSRZ",
     "createDateTime",
     "customer",
@@ -86,14 +90,18 @@ import ru.gov.zakupki._223fz.types._1.VolumePurchaseStatusType;
     "modificationDescription",
     "year",
     "purchaseIndicatorListType",
-    "attachments"
+    "attachments",
+    "notBuyInnovIn2015",
+    "sgozRepPer",
+    "sgozNotBuyP71352RepPer",
+    "sgozLastYear",
+    "sgozNotBuyP71352LastPer"
 })
-public class VolumePurchaseData {
+public class VolumeInnovPurchaseData {
 
     @XmlElement(required = true)
     protected String guid;
     protected String urlOOS;
-    protected Integer purchaseIndicatorVersion;
     protected String urlVSRZ;
     @XmlElement(required = true)
     @XmlSchemaType(name = "dateTime")
@@ -112,6 +120,11 @@ public class VolumePurchaseData {
     @XmlElement(required = true)
     protected PurchaseIndicatorListType purchaseIndicatorListType;
     protected DocumentListType attachments;
+    protected Boolean notBuyInnovIn2015;
+    protected BigDecimal sgozRepPer;
+    protected BigDecimal sgozNotBuyP71352RepPer;
+    protected BigDecimal sgozLastYear;
+    protected BigDecimal sgozNotBuyP71352LastPer;
 
     /**
      * Gets the value of the guid property.
@@ -159,30 +172,6 @@ public class VolumePurchaseData {
      */
     public void setUrlOOS(String value) {
         this.urlOOS = value;
-    }
-
-    /**
-     * Gets the value of the purchaseIndicatorVersion property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getPurchaseIndicatorVersion() {
-        return purchaseIndicatorVersion;
-    }
-
-    /**
-     * Sets the value of the purchaseIndicatorVersion property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setPurchaseIndicatorVersion(Integer value) {
-        this.purchaseIndicatorVersion = value;
     }
 
     /**
@@ -431,6 +420,126 @@ public class VolumePurchaseData {
      */
     public void setAttachments(DocumentListType value) {
         this.attachments = value;
+    }
+
+    /**
+     * Gets the value of the notBuyInnovIn2015 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isNotBuyInnovIn2015() {
+        return notBuyInnovIn2015;
+    }
+
+    /**
+     * Sets the value of the notBuyInnovIn2015 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setNotBuyInnovIn2015(Boolean value) {
+        this.notBuyInnovIn2015 = value;
+    }
+
+    /**
+     * Gets the value of the sgozRepPer property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getSgozRepPer() {
+        return sgozRepPer;
+    }
+
+    /**
+     * Sets the value of the sgozRepPer property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setSgozRepPer(BigDecimal value) {
+        this.sgozRepPer = value;
+    }
+
+    /**
+     * Gets the value of the sgozNotBuyP71352RepPer property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getSgozNotBuyP71352RepPer() {
+        return sgozNotBuyP71352RepPer;
+    }
+
+    /**
+     * Sets the value of the sgozNotBuyP71352RepPer property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setSgozNotBuyP71352RepPer(BigDecimal value) {
+        this.sgozNotBuyP71352RepPer = value;
+    }
+
+    /**
+     * Gets the value of the sgozLastYear property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getSgozLastYear() {
+        return sgozLastYear;
+    }
+
+    /**
+     * Sets the value of the sgozLastYear property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setSgozLastYear(BigDecimal value) {
+        this.sgozLastYear = value;
+    }
+
+    /**
+     * Gets the value of the sgozNotBuyP71352LastPer property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getSgozNotBuyP71352LastPer() {
+        return sgozNotBuyP71352LastPer;
+    }
+
+    /**
+     * Sets the value of the sgozNotBuyP71352LastPer property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setSgozNotBuyP71352LastPer(BigDecimal value) {
+        this.sgozNotBuyP71352LastPer = value;
     }
 
 }
