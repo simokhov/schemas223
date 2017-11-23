@@ -6,7 +6,7 @@
 //
 
 
-package ru.gov.zakupki._223fz.reference._1;
+package ru.gov.zakupki._223fz.types._1;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -15,25 +15,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Данные о протоколе
+ * Категория закупки
  * 
- * <p>Java class for purchaseProtocol complex type.
+ * <p>Java class for purchaseCategory complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="purchaseProtocol">
+ * &lt;complexType name="purchaseCategory">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="name">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://zakupki.gov.ru/223fz/types/1}nonEmptyString">
- *               &lt;maxLength value="2000"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -43,11 +37,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "purchaseProtocol", propOrder = {
+@XmlType(name = "purchaseCategory", propOrder = {
     "code",
     "name"
 })
-public class PurchaseProtocol {
+public class PurchaseCategory {
 
     protected long code;
     @XmlElement(required = true)
