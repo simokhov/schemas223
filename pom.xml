@@ -6,7 +6,7 @@
 
     <groupId>com.sstd</groupId>
     <artifactId>eis223scheme</artifactId>
-    <version>8.3.2.2</version>
+    <version>9.1.2</version>
     <packaging>jar</packaging>
     <name>EIS-223 Schemes</name>
 
